@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>This is my calculator</title>
+<script type="text/javascript">
+function isValidData()
+{
+var fn = document.getElementbyId("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+if(isNan(fn) || isNaN(sn))
+{
+alert("only numbers are allowed");
+return false;
+}
+return true;
+}
+
+function AddNum()
+{
+if(!isValiddata())
+return false;
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) + parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function SubNum(){
+if(!isValiddata())
+return false;
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) - parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function MulNum(){
+if(!isValiddata())
+return false;
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) * parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function DivNum(){
+if(!isValiddata())
+return false;
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) / parseInt(sn);
+document.getElementById("txtResult").value = result;
+else
+document.getElementById("txtResult").value =result;
+}
+function powerNum(){
+f(!isValiddata())
+return false;
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) ^ parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function Removedata()
+{
+document.getElementById("txtFN").value = "";
+document.getElementById("txtSN").value = "";
+document.getElementById("txtResult").value = "";
+}
+</script>
+</head>
+<body>
+First Number:
+<input type="text" id="txtFN"/><br/><br/>
+Second Number:
+<input type="text" id="txtSN"/><br></br>
+<input type="button" id="btnAdd"onclick="return AddNum();" value=" + "/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" id="btnMul" value=" * " onclick="return MulNum();"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" id="btnDiv" value=" / "onclick="return DivNum();"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" id="btnSub" value=" - "onclick="return SubNum();";/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" id="btnpower" value=" ^ "onclick="return powerNum();"
+<br/><br/>
+<br/><br/>
+<input type="button" id="btnclear" onclick="return Removedata()" value="clear"/>
+<br/><br/>
+<br/></br>
+Result:
+<input type="text" id="txtResult"/><br></br>
+</body>
+</html>

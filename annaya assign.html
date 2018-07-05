@@ -1,0 +1,74 @@
+<html>
+    <head>
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+          <select name="post">
+          
+          </select> 
+          <div id ="title"></div>
+          <div id="body"></div>
+            
+       
+        <script>
+           var xhr;
+           var posts = [];
+           var selectEle = document.querySelector("[name]");
+           selectEle.onchange = getDetails;
+           function getDetails(){
+               var selectedOption = selectEle.value;
+               document.querySelector("#title").textContent= posts[selectedOption].title;
+               document.querySelector("#body").textContent= posts[selectedOption].body;
+
+           }
+            function doAjax(){
+                var postsURL = "posts.json";
+
+                if(window.ActiveXObject){ /// IE Older versions
+                    xhr = new ActiveXObject("MICROSOFT.HTTP")
+                }else{ // Non-IE Browsers
+                    xhr = new XMLHttpRequest();
+                }
+                ///2.open connection between client and server
+                xhr.open("GET", postsURL,true);
+              
+                ///3. Send a Request
+                xhr.send();
+                xhr.onreadystatechange = function(){
+                         if(xhr.readyState === 4 && xhr.status == 200){
+                            var res = xhr.response;
+                            loadUI(res)
+                        }
+                }
+            }
+          
+            
+           
+
+
+            function loadUI(data){
+                var jsData = JSON.parse(xhr.response);
+                 posts = jsData.posts.post;
+                var selectEle = document.querySelector("[name]");
+
+                posts.forEach(function(post){
+                    var id = post.id;
+                
+                    var option = document.createElement('option');
+                    option.value = id;
+                    option.textContent = id;
+                    selectEle.append(option);
+                })
+            }
+                         
+            doAjax();
+            
+            
+        </script>
+    </body>
+</html>
+// JavaScript source code

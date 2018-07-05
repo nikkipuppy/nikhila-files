@@ -1,0 +1,30 @@
+<html>
+<head>
+
+</head>
+<body>
+    <form onsubmit="return make_json(this);">
+        first name: <input type="text" name="first" />
+        last name:<input type="text" name="last" />
+        <input type="submit" value="make_json" />
+
+                         
+
+    </form>
+    <pre id="shravani"></pre>
+    
+    <script>
+        function make_json(form) {
+            var json = {
+                "first name": form.first.value
+                "last name": form.last.value
+            };
+            var html = Json.stringify(json, 0, 4);
+            document.getElementById('shravani').innerhtml = html;
+            return false;
+
+        }
+
+    </script>
+</body>
+</html>

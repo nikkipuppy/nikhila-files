@@ -1,0 +1,62 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <table id="container">
+        <select name="post">
+            
+        </select>
+        <div id="title"></div>
+        <div id="body"></div>
+
+    </table>
+    <script>
+        var xhr;
+        var posts;
+        var selectEle = document.querySelector("[name]");
+        selectEle = getPostdetails;
+
+        function getpostDetails() {
+            var selectedItem = selectEle.value;
+            document.querySelector("#title").textcontent = "Title" + posts[selectedItem].title;
+            document.queryselector("#body").textContent = "Body:" + posts[selectedItem].body;
+        }
+        function doAjax() {
+            if (window.ActiveXObject) {
+                xhr = new ActiveXObject("MICROSOFT.HTTP")
+
+            } else {
+                xhr = new XMLHTTpRequest();
+            }
+            xhr.open("GET","posts.json", true);
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+
+            xhr.send();
+            xhr.onreadtstatechange = function () {
+                if (xhr.readyState ==== 4 && xhr.status == 200) {
+                    var res = xhr.response;
+                    loadUI(res)
+                }
+            }
+        }
+        function loadUI(data) {
+            var jsData = JSON.parse(xhr.response);
+            var posts = jsData.posts.post;
+            var selectEle = document.querySelector("[name]");
+            posts.forEach(function (post) {
+                var id = post.id;
+                var option = document.createElement('option');
+                option.value = id;
+                option.value === id;
+                selectEle.append(option);
+            })
+        }
+        doAjax();
+    </script>
+</body>
+</html>

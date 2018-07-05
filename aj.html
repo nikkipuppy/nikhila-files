@@ -1,0 +1,50 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin ="anonymous"></script>
+</head>
+<select>
+    <option></option>
+</select>
+<body>
+    <table id="table">
+        <select name="post">
+            
+        </select>
+        <div id="title1"></div>
+        <div id="body1"></div>
+
+   
+    <script>
+        var xhr;
+        var posts;
+        var selectEle = document.querySelector("[name]");
+        selectEle.onchange = getPostDetails;
+
+
+        function getPostDetails() {
+            var selectedItem = select.value;
+            document.querySelector("title1").textcontent = "Title1" + posts[selectedItem].title;
+            document.queryselector("body1").textContent = "Body1:" + posts[selectedItem].body;
+        
+        }
+
+
+
+        function loadUI(data) {
+            var jsData = JSON.parse(xhr.response);
+            var posts = jsData.posts.post;
+            var selectEle = document.querySelector("[name]");
+            posts.forEach(function (post) {
+                var id = post.id;
+                var option = document.createElement('option');
+                option.value = id;
+                option.textContent = id;
+                selectEle.append(option);
+            })
+        }
+        doAjax();
+    </script>
+</body>
+</html>

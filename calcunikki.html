@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nikki calcu</title>
+   
+    <legend><b>NIKKI CALCULATOR</b> </legend>
+    <br /><br />
+    <script type="text/javascript">
+       
+        
+        function AddNum() {
+            var fn = document.getElementById("txtFN").value; /// "10"
+            var sn = document.getElementById("txtSN").value;
+            debugger;
+            var result = parseInt(fn) + parseInt(sn);
+            document.getElementById("txtResult").value = result;
+        }
+        function SubNum() {
+            var fn = document.getElementById("txtFN").value;
+            var sn = document.getElementById("txtSN").value;
+            var result = parseInt(fn) - parseInt(sn);
+            document.getElementById("txtResult").value = result;
+        }
+        function MulNum() {
+            var fn = document.getElementById("txtFN").value;
+            var sn = document.getElementById("txtSN").value;
+            var result = parseInt(fn) * parseInt(sn);
+            document.getElementById("txtResult").value = result;
+        }
+        function DivNum() {
+            var fn = document.getElementById("txtFN").value;
+            var sn = document.getElementById("txtSN").value;
+            var result = parseInt(fn) / parseInt(sn);
+            document.getElementById("txtResult").value = result;
+        }
+        function RemoveData(){
+            document.getElementById("txtFN").value="";
+            document.getElementById("txtSN").value="";
+            document.getElementById("txtResult").value="";
+            document.getElementById("txtResult").value = "";
+        
+
+        }
+        
+    </script>
+
+    
+</head>
+<body>
+    
+    First Number:
+            <input type="text" id="txtFN" />
+            <br />
+            <br />
+
+
+
+    Second Number:
+    <input type="text" id="txtSN" />
+    <br />
+    <br />
+    <input type="button" id="btnAdd" onclick="return AddNum();" value=" + " />
+    <input type="button" id="btnSub" onclick="return SubNum();" value=" - " />
+    <input type="button" id="btnMul" onclick="return MulNum();" value=" * " />
+    <input type="button" id="btnDiv" onclick="return DivNum();" value=" / " />
+    <input type="button" id="btnclear" onclick="return RemoveData();" value="clear" />
+    <br />
+    <br />
+
+    Result:
+    <input type="text" id="txtResult" />
+    <br />
+    <br />
+
+    
+    
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>This is my calculator</title>
+    <script type="text/javascript">
+function AddNum()
+{
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) + parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function SubNum(){
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) - parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function MulNum(){
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) * parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function DivNum(){
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) / parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function powerNum(){
+var fn = document.getElementById("txtFN").value;
+var sn = document.getElementById("txtSN").value;
+var result = parseInt(fn) ^ parseInt(sn);
+document.getElementById("txtResult").value = result;
+}
+function Removedata()
+{
+document.getElementById("txtFN").value = "";
+document.getElementById("txtSN").value = "";
+document.getElementById("txtResult").value = "";
+}
+    </script>
+</head>
+<body>
+    First Number:
+    <input type="text" id="txtFN" /><br /><br />
+    Second Number:
+    <input type="text" id="txtSN" /><br></br>
+    <input type="button" id="btnAdd" onclick="return AddNum();" value=" + " />
+    
+    <input type="button" id="btnMul" value=" * " onclick="return MulNum();" />
+   
+    <input type="button" id="btnDiv" value=" / " onclick="return DivNum();" />
+    
+    <input type="button" id="btnSub" value=" - " onclick="return SubNum();" />
+    
+    <input type="button" id="btnpower" value=" ^ " onclick="return powerNum();" />
+    <br /><br />
+    <br /><br />
+    <input type="button" id="btnclear" onclick="return Removedata()" value="clear" />
+    <br /><br />
+    <br /></br>
+    Result:
+    <input type="text" id="txtResult" /><br></br>
+</body>
+</html>

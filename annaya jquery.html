@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head >
+<body>
+    <ul class="container"></ul>
+
+    <script>
+        var posts = [];
+
+
+        $(document).ready(function () {
+
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts",
+                type: "GET",
+                Success: function (posts) {
+                    debugger;
+                    const map = post.map();
+                    
+
+                
+
+                
+                }
+
+            })
+        })
+
+          
+
+           
+
+
+
+        
+
+    </script>
+
+</body>
+</html>

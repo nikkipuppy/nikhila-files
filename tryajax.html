@@ -1,0 +1,59 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to retrieve data from JSON file using Jquery and ajax?</title>
+</head>
+<body>
+    <div id="info"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+                    
+                    var j=0; 
+                    var xdata; 
+                    var xreq = new XMLHttpRequest();
+                    xreq.open('GET', 'file.json');
+                    xreq.onload = function () {
+                        
+                        xdata = JSON.parse(xreq.responseText);
+                        
+                        addHtml(xdata, j);
+                        
+                        j = j + 6;
+                    };
+                    //send request ajax
+                    xreq.send();
+
+                    
+                    $(document).ready(function () {
+                            $(window).scroll(function () {
+                                // get the scroll Position
+                                var scrollPosition = $(window).scrollTop();
+                                // Multiplication operation in 1.2 in order to call the function before arrival the end of the page with 20%
+                                if (scrollPosition >= $(document).height() - ($(window).height())*1.2 && j < xdata.length) {
+                                    addHtml(xdata, j);
+                                    j = j + 6;
+                                    xreq.send();
+                                }
+                            });
+                        });
+
+                    //funcation to Build the page
+                    function addHtml(data,i) {
+                        var info = document.getElementById("info");
+                        var HtmlText ="";
+                        // insert the HTML items before end a page
+                        info.insertAdjacentHTML('beforeend',HtmlText);
+                    }
+</script>
+
+
+----------
+
+
+</html>

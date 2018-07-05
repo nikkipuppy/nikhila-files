@@ -1,0 +1,21 @@
+<html>
+<head>
+
+</head>
+<body>
+    <button value="hello me!" id="btn">clickme</button>
+    <script>
+        var btnEle = document.getElementById("btn");
+        btnEle.onclick = (e) => {
+            console.log(e.target.id);
+            console.log(this.id);
+
+        }
+        var self = this;
+        var id = "good afternoon !!"
+       
+       
+        debugger;
+    </script>
+</body>
+</html>

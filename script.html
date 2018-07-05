@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>nikki calculator</title>
+    <script type="text/javascript">
+        
+        function AddNum()
+        {
+            var fn = document.getElementById("txtFN").value;
+            var sn = document.getElementById("txtSN").value;
+            var result = parseInt(fn) + parseInt(sn);
+            document.getElementById("txt Result"). value = result;
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+    First Number:
+    <input type="text" id="txtFN" /><br /><br />
+
+    Second Number:
+    <input type="text" id="txtSN"/><br /><br />
+    <input type="button" id="btnAdd" onclick="return Addnum();"value="add" />
+    <br /><br />
+    Result:
+    <input type="text" id="txtresult" /> 
+
+
+</body>
+</html>

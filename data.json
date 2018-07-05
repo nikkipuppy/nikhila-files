@@ -1,0 +1,26 @@
+{
+  "employees": {
+    "employee": [
+      {
+        "id": "1",
+        "firstName": "nikki",
+        "lastName": "Janga",
+        "photo": ""
+      },
+      {
+        "id": "2",
+        "firstName": "souji",
+        "lastName": "soma",
+        "photo":
+      },
+      {
+        "id": "3",
+        "firstName": "Brinda",
+        "lastName": "soma",
+        "photo": 
+
+
+      }
+    ]
+  }
+}
